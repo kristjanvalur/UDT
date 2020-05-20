@@ -410,6 +410,15 @@ m_iMinor(minor)
       m_iErrno = err;
 }
 
+CUDTException& CUDTException::operator=(const CUDTException& e)
+{
+  m_iMajor = e.m_iMajor;
+  m_iMinor = e.m_iMinor;
+  m_iErrno = e.m_iErrno;
+  m_strMsg = e.m_strMsg;
+  return *this;
+}
+
 CUDTException::CUDTException(const CUDTException& e):
 m_iMajor(e.m_iMajor),
 m_iMinor(e.m_iMinor),
